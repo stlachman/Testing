@@ -30,8 +30,11 @@ const greaterThanFifty = num => {
   return false;
 };
 
-const add = (x, y) => {
-  return x + y;
+const add = (...args) => {
+  const numbers = Array.isArray(args) ? args : Array.from(args);
+  return numbers.reduce((acc, cv) => {
+    return acc + cv;
+  }, 0);
 };
 
 const subtract = (x, y) => {
@@ -85,7 +88,7 @@ const roundUp = num => {
 };
 
 const addExclamationPoint = str => {
-  return (str += '!');
+  return (str += "!");
 };
 
 const combineNames = (firstName, lastName) => {

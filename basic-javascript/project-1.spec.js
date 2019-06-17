@@ -4,7 +4,8 @@ const {
   areSameLength,
   areEqual,
   lessThanNinety,
-  greaterThanFifty
+  greaterThanFifty,
+  add
 } = require("./project-1");
 
 // start testing!
@@ -61,5 +62,23 @@ describe("Function testing if number is greater than 50", () => {
 
   it("it should return false if number is less than 50", () => {
     expect(greaterThanFifty(22)).toBe(false);
+  });
+});
+
+describe("Function that adds two numbers together", () => {
+  it("it should add two numbers together", () => {
+    expect(add(10, 15)).toBe(25);
+  });
+
+  it("it should add more than two numbers together", () => {
+    expect(add(10, 15, 10)).toBe(35);
+  });
+
+  it("it should return value if only one number is provided", () => {
+    expect(add(10)).toBe(10);
+  });
+
+  it("should return 0 if no arguments are provided", () => {
+    expect(add()).toBe(0);
   });
 });
